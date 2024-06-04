@@ -64,10 +64,35 @@ return numerosValidados
 
 // realizarOperacion debe recibir el tipo de
 // operacion, realizar la operacion con los dos
-// valores de los inputs y devolver un resultado
+// valores de los inputs 
 const realizarOperacion = (operacion) => {
 const numeros = leerInputs()
+if (numeros === null) {
+    return
+}
+
 console.log(operacion, "con los numeros:", numeros.numero1, "y", numeros.numero2)
+
+let resultado = 0
+// validar la operacion
+if (operacion === 'suma') {
+    resultado = numeros.numero1 + numeros.numero2
+}
+
+if (operacion === 'resta') {
+    resultado = numeros.numero1 - numeros.numero2
+}
+
+if (operacion === 'multiplicacion') {
+    resultado = numeros.numero1 * numeros.numero2
+}
+
+if (operacion === 'division') {
+    resultado = numeros.numero1 / numeros.numero2
+}
+
+// console.log("resultado:", resultado)
+mostrarResultado(resultado, operacion)
 
 }
 
@@ -75,7 +100,29 @@ console.log(operacion, "con los numeros:", numeros.numero1, "y", numeros.numero2
 // de la operacion y mostrarlo al usuario,
 // ademas debe modificar el simbolo de operacion
 // que se realizo
-const mostrarResultado = () => {
+const mostrarResultado = (resultado, operacion) => {
+    console.log(resultado)
+    const spanResultado = document.getElementById('resultado')
+    spanResultado.innerText = resultado
+
+    const spanOperacion = document.getElementById('operacion')
+
+    if (operacion === 'suma') {
+        spanOperacion.innerText = '+'
+    }
+
+    if (operacion === 'resta') {
+        spanOperacion.innerText = '-'
+    }
+
+    if (operacion === 'multiplicacion') {
+        spanOperacion.innerText = 'x'
+    }
+
+    if (operacion === 'division') {
+        spanOperacion.innerText = '/'
+    }
 }
+
 
 
