@@ -137,55 +137,95 @@ const listaAnimales = [
     "zorro"
 ]
 
-console.log('tamaño del array:', listaAnimales.length)
+// console.log('tamaño del array:', listaAnimales.length)
 
 // parametro 1: contador
 // parametro 2: condicion para que se detenga
 // paramatro 3: comportamiento del contador
 // for(let contador = 0; contador < listaAnimales.length; contador = contador + 1) {
-for(let i = 0; i < listaAnimales.length; i) {
+    for (let i = 0; i < listaAnimales.length; i  ) {
     console.log(i)
     console.log(listaAnimales[i])
 }
 
 // condiciones
 // - igualdad: ===
+// - diferente de: !==
 // - menor que: <
 // - mayor que: >
 // - menor o igual que: <=
 // - mayor o igual que: >=
 
+let numero = 1
+
+if (numero === 10) {
+    console.log('numero es 10')
+} else if (numero === 11) {
+    console.log('numero es 11')
+} else if (numero === 12) {
+    console.log('numero es 12')
+} else {
+    console.log('no es ni 10 ni 11 ni 12')
+}
+
+// ---------- Operadores logicos ---------
+
+// or - o - ||
+let texto = "c"
+
+if (texto === "a" || texto === "b" || texto === "c") {
+    console.log('la condicion es verdadera')
+} else {
+    console.log("el texto no es ni 'a' ni 'b'")
+}
+
+// and - y - &&
+let numero3 = 20
+
+if (numero3 > 0 && numero3 < 10) {
+    console.log('nuestro numero esta entre el 0 y el 10')
+} else {
+    console.log('nuestro numero no esta entre el 0 y el 10')
+}
+
+// -------- bucles - while - mientras ------
+
+let contador = 0
+while (contador < 5) { // ciclo 3 - contador = 2
+    console.log(contador)
+    console.log(listaAnimales[contador])
+
+    contador++
+}
+
+// -------------- funciones ----------------
+// estructuras reciben parametros, procesarlos
+// y devulven paramtros
+
+// Caracteristicas
+// 1. agrupar codigo relacionado a un cierto fin
+// 2. la funcion es reutilizable
+
+// declaracion de la funcion JavaScript Antiguo
+// function sumar(valor1, valor2) {
+//     let resultado = valor1 + valor2
+//     return resultado
+// }
+
+// declaracion de la funcion con ECMAScript 
+// funcion flecha
+const sumar = (valor1, valor2) => {
+    let resultado = valor1 + valor2
+    return resultado
+}
 
 
-const listaDeVideos = [
-    {
-        miniatura: "",
-        titulo: "",
-        canal: "",
-        visualizaciones: 0
-    },
-    {
-        miniatura: "",
-        titulo: "",
-        canal: "",
-        visualizaciones: 0
-    },
-    {
-        miniatura: "",
-        titulo: "",
-        canal: "",
-        visualizaciones: 0
-    },
-    {
-        miniatura: "",
-        titulo: "",
-        canal: "",
-        visualizaciones: 0
-    },
-    {
-        miniatura: "",
-        titulo: "",
-        canal: "",
-        visualizaciones: 0
-    }
-]
+// ejecucion de la funcion \\ llamado de la funcion
+
+let resultadoSuma = sumar(5, 10)
+console.log("resultad de la suma1", resultadoSuma)
+
+console.log("resultad de la suma2", sumar(50, 15))
+console.log("resultad de la suma2", sumar(100, 8))
+console.log("resultad de la suma2", sumar(20, 1))
+console.log("resultad de la suma2", sumar(5, 2))
